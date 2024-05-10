@@ -71,3 +71,27 @@ button {
   margin-bottom: 16px;
 }
 /* ------------------------------------------- ?task-1 */
+/* ------------------------------------------- !task-2 */
+.section-task-2 {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 100px 156px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.gallery {
+  display: flex;
+  gap: 48px 24px;
+}
+.gallery-image {
+  width: 360px;
+  height: 300px;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+.gallery-image:hover {
+   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.1);
+}
+    
+/* ------------------------------------------- ?task-2 */

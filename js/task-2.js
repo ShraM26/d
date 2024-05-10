@@ -1,3 +1,5 @@
+'use strict'
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -24,3 +26,15 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+function createImageElement(image) {
+  return `<li class="gallery-item"><img  class="gallery-image" src="${image.url}" alt="${image.alt}"></li>`;
+}
+const galleryHTML = images.slice(0, 3).map(createImageElement).join('');
+
+const gallery = document.querySelector('.gallery');
+
+gallery.innerHTML = galleryHTML;
+
+
+

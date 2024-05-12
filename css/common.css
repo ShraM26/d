@@ -95,3 +95,31 @@ button {
 }
     
 /* ------------------------------------------- ?task-2 */
+
+/* ------------------------------------------- !task-4 */
+ .login-form {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 408px;
+    margin: 0 auto;
+    background: #fff;
+
+ }
+ .name-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+ }
+ .inp-form {
+    border: 1px solid #808080;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: transparent;
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+ }
+/* ------------------------------------------- ?task-4 */

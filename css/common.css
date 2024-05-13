@@ -22,7 +22,10 @@ h6,
 p {
   margin: 0;
 }
-
+a {
+  text-decoration: none;
+  
+}
 ul,
 ol {
   list-style-type: none;
@@ -32,6 +35,59 @@ ol {
 
 button {
   cursor: pointer;
+}
+.link-back {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    background-color: #000;
+   transition: color 350ms cubic-bezier(0.4, 0, 0.2,  1), background 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
+    margin-left: 40px;
+}
+.link-back::before {
+  content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #000;
+    transition: border-right-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-back:hover,
+.link-back:focus {
+  background-color: #fff;
+  color: black;
+}
+.link-back:hover::before,
+.link-back:focus::before {
+  border-right-color:#fff;
+}
+.list-item{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.link-task {
+  font-weight: 500;
+  font-size: 18px;
+  color:#fff;
+  transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1), background-color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(to bottom, black, green);
+  border-radius:90% 1%;
+  padding: 24px 45px; 
+  display: block;
+}
+.link-task:hover,
+.link-task:active {
+  background: linear-gradient(to bottom, black, orange);
+  color: #263238;
 }
 /* ------------------------------------------- !task-1 */
 .section-task-1 {
@@ -78,6 +134,7 @@ button {
     padding: 100px 156px;
     max-width: 1440px;
     margin: 0 auto;
+    margin-top: 20px;
 }
 .gallery {
   display: flex;
@@ -98,22 +155,25 @@ button {
 
 /* ------------------------------------------- !task-4 */
  .login-form {
-    display: flex;
-    flex-direction: column;
-
     border-radius: 8px;
     padding: 24px;
     max-width: 408px;
     margin: 0 auto;
     background: #fff;
-
  }
- .name-label {
+.name-label {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+ .login-form .name-label:first-child {
+   margin-bottom: 40px;
  }
  .inp-form {
+    color: #2e2f42;
     border: 1px solid #808080;
     border-radius: 4px;
     background-color: transparent;
@@ -122,4 +182,26 @@ button {
     height: 40px;
     padding-left: 10px;
  }
+ .inp-form:hover {
+  border: 1px solid #000;
+ }
+
+ .btn-lgn-form {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  max-width: 86px;
+  background-color: #4e75ff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-top: 16px;
+ }
+ .btn-lgn-form:hover {
+  background-color: #6c8cff;;
+ }
+
 /* ------------------------------------------- ?task-4 */

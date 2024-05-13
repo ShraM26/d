@@ -30,7 +30,7 @@ const images = [
 function createImageElement(image) {
   return `<li class="gallery-item"><img  class="gallery-image" src="${image.url}" alt="${image.alt}"></li>`;
 }
-const galleryHTML = images.slice(0, 3).map(createImageElement).join('');
+const galleryHTML = images.map(createImageElement).join('');
 
 const gallery = document.querySelector('.gallery');
 

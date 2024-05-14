@@ -19,7 +19,8 @@ function getRandomHexColor() {
       alert('Please enter a number between 1 and 100.'); 
     }
 
-    boxesContainer.innerHTML = ''; 
+    const fragment = document.createDocumentFragment(); 
+    
     let size = 30;
     for (let i = 0; i < amount; i++) {
       const box = document.createElement('div');
@@ -27,10 +28,12 @@ function getRandomHexColor() {
       box.style.width = `${size}px`;
       box.style.height = `${size}px`;
       box.style.backgroundColor = getRandomHexColor();
-      boxesContainer.appendChild(box);
+      fragment.appendChild(box);
       size += 10; 
     }
 
+    boxesContainer.appendChild(fragment);
+    
     input.value = ''; 
     input.focus(); 
   }

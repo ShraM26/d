@@ -6,28 +6,24 @@ loginForm.addEventListener('submit', event => {
     event.preventDefault();
 
     const formData = {};
-    const inputs = loginForm.elements;
+    let isEmptyField = false;
 
-    for (let input of inputs) {
-        if (input.type !== 'submit' && !input.value.trim()) {
-            alert('All form fields must be filled in');
-            return;
+    for (let input of loginForm.elements) {
+        if (input.name && input.type !== 'submit') {
+            const trimmedValue = input.value.trim();
+            if (!trimmedValue) {
+                isEmptyField = true;
+                break;
+            }
+            formData[input.name] = trimmedValue;
         }
-        formData[input.name] = input.value.trim();
     }
 
-    if (!isValidEmail(formData.email)) {
-        alert('Please enter a valid email address');
-        return;
-    }
-
-    if (formData.password.length < 8) {
-        alert('Password must be at least 8 characters long');
+    if (isEmptyField) {
+        alert('All form fields must be filled in');
         return;
     }
 
     console.log(formData);
     loginForm.reset();
 });
-
-const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
